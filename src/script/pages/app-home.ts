@@ -34,6 +34,10 @@ export class AppHome extends LitElement {
         right: 16px;
       }
 
+      pwa-install::part(openButton) {
+        background: grey;
+      }
+
       button {
         cursor: pointer;
       }
@@ -70,16 +74,27 @@ export class AppHome extends LitElement {
           <h2>Welcome!</h2>
 
           <p>
-            Welcome to the lit-element edition of the <a href="https://pwabuilder.com">PWABuilder</a> pwa-starter!
-
-            Be sure to head back to <a href="https://pwabuilder.com">PWABuilder</a> when you are ready to ship this PWA to the Microsoft, Google Play and Samsung Galaxy stores! PWABuilder allows you to easily
-            generate packages for these stores. 
+            Welcome to PWAedu! This is a sample PWA to test and highlight features of PWAs!
           </p>
 
           ${'share' in navigator ? html`<button @click="${this.share}">Share this Starter!</button>` : null}
+          <pwa-auth
+              microsoftkey="9402ef38-0e2a-4152-8837-47d3a2534d0e"
+              googlekey="..."
+              facebookkey="...">
+          </pwa-auth>
         </div>
 
-        <pwa-install>Install PWA Starter</pwa-install>
+        <pwa-install>Install PWAedu</pwa-install>
+
+        Adaptive Card feature:
+        <pwb-adapcard>GREAT</pwb-adapcard>
+
+        People Picker feature:
+        <mgt-people-picker></mgt-people-picker>
+        <br></br>
+        Person Graph component:
+        <mgt-person person-query="me" show-name show-email></mgt-person>
       </div>
     `;
   }

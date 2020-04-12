@@ -45,7 +45,7 @@ export class AppHeader extends LitElement {
   render() {
     return html`
       <header>
-        <h1>PWA Starter</h1>
+        <h1>PWAedu</h1>
 
         <nav>
           <a href="./">Home</a>
