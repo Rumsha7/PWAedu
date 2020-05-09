@@ -64,6 +64,8 @@ export class AppHome extends LitElement {
     }
   }
 
+  
+
   render() {
     return html`
       <div>
@@ -72,6 +74,8 @@ export class AppHome extends LitElement {
 
           <img src="assets/icons/icon_512.png" alt="app icon">
           <h2>Welcome!</h2>
+
+          <h3>V2</h3>
 
           <p>
             Welcome to PWAedu! This is a sample PWA to test and highlight features of PWAs!
@@ -95,7 +99,12 @@ export class AppHome extends LitElement {
         <br></br>
         Person Graph component:
         <mgt-person person-query="me" show-name show-email></mgt-person>
+        
+        <button @click="${this.openPopup}">BUTTON</button>
       </div>
     `;
+  }
+  openPopup(e) {
+    console.log("openPopup");
   }
 }
