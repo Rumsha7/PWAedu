@@ -101,6 +101,14 @@ export class AppHome extends LitElement {
         <mgt-person person-query="me" show-name show-email></mgt-person>
         
         <button @click="${this.openPopup}">BUTTON</button>
+        
+        <div
+          class="teams-share-button"
+          data-href="https://www.pwabuilder.com">
+        </div>
+
+        <p>Last element</p>
+        
       </div>
     `;
   }
