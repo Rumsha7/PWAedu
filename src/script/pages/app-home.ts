@@ -2,6 +2,34 @@ import { LitElement, css, html, customElement } from 'lit-element';
 
 // For more info on the @pwabuilder/pwainstall component click here https://github.com/pwa-builder/pwa-install
 import '@pwabuilder/pwainstall';
+import * as microsoftTeams from "@microsoft/teams-js";
+
+
+// Set the desired theme
+function setTheme(theme: string): void {
+  if (theme) {
+      // Possible values for theme: 'default', 'light', 'dark' and 'contrast'
+      document.body.className = "theme-" + (theme === "default" ? "light" : theme);
+  }
+}
+
+// Create the URL that Microsoft Teams will load in the tab. You can compose any URL even with query strings.
+function createTabUrl(): string {
+  console.log(window.location.protocol + "//" + window.location.host);
+  return window.location.protocol + "//" + window.location.host;
+}
+
+// Call the initialize API first
+microsoftTeams.initialize();
+
+// Check the initial theme user chose and respect it
+microsoftTeams.getContext(function(context: microsoftTeams.Context): void {
+    if (context && context.theme) {
+        setTheme(context.theme);
+    }
+});
+
+
 
 @customElement('app-home')
 export class AppHome extends LitElement {
@@ -100,19 +128,23 @@ export class AppHome extends LitElement {
         Person Graph component:
         <mgt-person person-query="me" show-name show-email></mgt-person>
         
-        <button @click="${this.openPopup}">BUTTON</button>
         
         <div
           class="teams-share-button"
           data-href="https://www.pwabuilder.com">
         </div>
 
+        <script>
+        microsoftTeams.initialize();
+        microsoftTeams.getContext(function(context: microsoftTeams.Context): void {
+          if (context && context.theme) {
+              setTheme(context.theme);
+          }
+        });
+        </script>
         <p>Last element</p>
         
       </div>
     `;
-  }
-  openPopup(e) {
-    console.log("openPopup");
   }
 }
