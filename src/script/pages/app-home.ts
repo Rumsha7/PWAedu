@@ -101,6 +101,10 @@ export class AppHome extends LitElement {
         <mgt-person person-query="me" show-name show-email></mgt-person>
         
         <button @click="${this.openPopup}">BUTTON</button>
+        
+        <p> ${(navigator.appVersion.indexOf("Mac")!=-1)} </p>
+        <p> test </p>
+
       </div>
     `;
   }
