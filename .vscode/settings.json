@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/b1819099-c912-46ba-bec4-70a65f74205c/resourceGroups/pwa-starter/providers/Microsoft.Web/sites/PWAedu",
+    "appService.deploySubpath": "dist"
+}

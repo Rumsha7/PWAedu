@@ -83,7 +83,7 @@ export class AppHome extends LitElement {
 
           ${'share' in navigator ? html`<button @click="${this.share}">Share this Starter!</button>` : null}
           <pwa-auth
-              microsoftkey="9402ef38-0e2a-4152-8837-47d3a2534d0e"
+              microsoftkey="..."
               googlekey="..."
               facebookkey="...">
           </pwa-auth>
